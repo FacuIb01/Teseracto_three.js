@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d13">
+  <title>Teseracto — Exploración 4D</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./src/style.css">
+  <script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <header class="header">
+    <a class="wordmark" href="./" aria-label="Teseracto, inicio"><span class="brand-mark">T</span> TESERACTO<span class="wordmark-dot">®</span></a>
+    <span class="header-note">IDENTIDAD EN MOVIMIENTO <span class="dot"></span></span>
+  </header>
+  <main>
+    <div class="intro"><p class="eyebrow">ESTUDIO DE FORMA / 001</p><h1>Una nueva dimensión<span>.</span></h1><p>La misma esencia. Infinitas perspectivas.</p></div>
+    <section class="workspace" aria-label="Visor interactivo del teseracto">
+      <div class="stage" id="stage">
+        <div class="stage-top"><span class="live-label"><span class="dot"></span> EXPLORACIÓN 4D</span><span id="motion-state">EN MOVIMIENTO</span></div>
+        <div class="cross cross-tl" aria-hidden="true"></div><div class="cross cross-br" aria-hidden="true"></div>
+        <div id="model" aria-label="Teseracto tridimensional interactivo"></div>
+        <p id="error" role="alert" hidden></p>
+        <div class="stage-bottom"><span>Arrastrá para explorar <span class="separator">/</span> Scroll para acercar</span><button id="theme" type="button" aria-pressed="false">Fondo claro <span aria-hidden="true">↗</span></button></div>
+      </div>
+      <aside class="settings" aria-label="Controles del modelo">
+        <div class="settings-heading"><span class="eyebrow">EL OBJETO</span><span class="index">01—04</span></div>
+        <h2>Teseracto</h2><p class="description">Una proyección de la cuarta dimensión, en constante transformación.</p>
+        <div class="palette" aria-label="Paleta: turquesa, azul, hielo y marfil"><i style="--swatch:#00a8bc"></i><i style="--swatch:#4568c6"></i><i style="--swatch:#a8dde0"></i><i style="--swatch:#fff0ce"></i><span>Paleta original</span></div>
+        <div class="controls">
+          <label for="speed"><span>Velocidad</span><output id="speed-value">0.6×</output></label><input id="speed" type="range" min="0" max="1.5" step="0.1" value="0.6">
+          <label for="thickness"><span>Grosor de las aristas</span><output id="thickness-value">1.0×</output></label><input id="thickness" type="range" min="0.5" max="1.8" step="0.1" value="1">
+          <label for="size"><span>Tamaño</span><output id="size-value">100%</output></label><input id="size" type="range" min="65" max="120" step="1" value="100">
+        </div>
+        <button type="button" class="primary" id="play" aria-pressed="true"><span id="play-icon" aria-hidden="true">Ⅱ</span><span id="play-label">Pausar rotación</span></button>
+        <button type="button" class="reset" id="reset">Restablecer vista <span aria-hidden="true">↺</span></button>
+        <div class="object-meta"><span>16 vértices</span><span>32 aristas</span><span>4 dimensiones</span></div>
+      </aside>
+    </section>
+    <footer><span>DISEÑADO PARA OTRA PERSPECTIVA</span><span>Three.js <span class="separator">/</span> Modelo interactivo</span></footer>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
